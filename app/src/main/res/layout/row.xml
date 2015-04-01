@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- row.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="4dip"
+    android:paddingBottom="6dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    android:orientation="horizontal">
+
+    <TextView android:id="@+id/NUMBER"
+        android:layout_width="5dip"
+        android:textColor="#ffffffff"
+        android:layout_height="wrap_content" android:layout_weight="0.2"/>
+
+    <TextView android:id="@+id/LOGIN"
+        android:layout_width="30dip"
+        android:textColor="#ff7aff2c"
+        android:layout_height="wrap_content" android:layout_weight="0.5"/>
+
+    <TextView android:id="@+id/RESULT"
+        android:layout_width="30dip"
+        android:textColor="#ff24ffee"
+        android:layout_height="wrap_content"  android:layout_weight="1"/>
+</LinearLayout>

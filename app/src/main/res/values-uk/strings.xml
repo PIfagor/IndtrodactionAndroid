@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Перший</string>
+    <string name="hello_world">Привіт Світ</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="title_activity_ranking_table">Рейтинг</string>
+</resources>

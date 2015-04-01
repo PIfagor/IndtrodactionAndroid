@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/frame"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true">
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Next"
+            android:id="@+id/bNext"
+            android:layout_gravity="right|bottom" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Prew"
+            android:id="@+id/bPrew"
+            android:layout_gravity="left|bottom" />
+
+        <TextView android:text="@string/hello_world" android:layout_width="255dp"
+            android:layout_height="145dp"
+            android:id="@+id/text"
+            android:layout_gravity="center_horizontal|top" />
+
+        <AnalogClock
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/analogClock"
+            android:layout_gravity="right|top" />
+
+        <TextView
+            android:layout_width="264dp"
+            android:layout_height="91dp"
+            android:id="@+id/twName"
+            android:layout_gravity="left|center_vertical" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/ewRecord"
+            android:layout_gravity="center"
+            android:text="You record" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ok"
+            android:id="@+id/btnConfrim"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="50dp" />
+
+    </FrameLayout>
+
+</RelativeLayout>

@@ -5,15 +5,20 @@ package com.troystudios.wackgame;
  */
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.Toast;
 
 import area730.com.first.R;
 
-public class Splash extends Activity  {
+public class Splash extends MusicActivity  {
 
     /** Duration of wait **/
     private final int SPLASH_DISPLAY_LENGTH = 15000;
+    private   MediaPlayer mediaPlayer ;
+    private  long  timer;
 
     /** Called when the activity is first created. */
     @Override
@@ -32,37 +37,63 @@ public class Splash extends Activity  {
 //                Splash.this.finish();
 //            }
 //        }, SPLASH_DISPLAY_LENGTH);
+        setContentView(R.layout.splash);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.fon_music);
+        mediaPlayer.start(); // no need to call prepare(); create() does that for you
     }
 
     @Override
     //public boolean onTouch(View view, MotionEvent event)
-    public boolean onTouchEvent(MotionEvent event){
-        // событие
-        int actionMask = event.getActionMasked();
-        // индекс касания
-        int pointerIndex = event.getActionIndex();
-        // число касаний
-         pointerCount = event.getPointerCount();
+    public boolean onTouchEvent(MotionEvent e){
+        super.onTouchEvent(e);
 
-        switch (actionMask) {
-            case MotionEvent.ACTION_DOWN: // первое касание
-                //countFingers++;
-                makeEvent();
-                break;
 
-            case MotionEvent.ACTION_POINTER_DOWN: // последующие касания
-               // countFingers++;
-                makeEvent();
-                break;
+        if(e.getAction() == 0){
+            timer = System.currentTimeMillis();
 
-            case MotionEvent.ACTION_UP: // прерывание последнего касания
-                //countFingers--;
-                makeEvent();
-            case MotionEvent.ACTION_POINTER_UP: // прерывания касаний
-               // countFingers--;
-                makeEvent();
-                break;
         }
+        else if (e.getAction() == 1) {
+            long timer2 = System.currentTimeMillis();
+            if (timer2 - timer < 1500)
+            {
+                Toast.makeText(getApplicationContext(), "Hold finger more",
+                        Toast.LENGTH_SHORT ).show();
+            }
+            else
+            {
+                Intent mainIntent = new Intent(Splash.this,LoginActivity.class);
+                Splash.this.startActivity(mainIntent);
+                Splash.this.finish();
+            }
+
+        }
+
+        // событие
+//        int actionMask = event.getActionMasked();
+//        // индекс касания
+//        int pointerIndex = event.getActionIndex();
+//        // число касаний
+//         pointerCount = event.getPointerCount();
+//
+//        switch (actionMask) {
+//            case MotionEvent.ACTION_DOWN: // первое касание
+//                //countFingers++;
+//                makeEvent();
+//                break;
+//
+//            case MotionEvent.ACTION_POINTER_DOWN: // последующие касания
+//               // countFingers++;
+//                makeEvent();
+//                break;
+//
+//            case MotionEvent.ACTION_UP: // прерывание последнего касания
+//                //countFingers--;
+//                makeEvent();
+//            case MotionEvent.ACTION_POINTER_UP: // прерывания касаний
+//               // countFingers--;
+//                makeEvent();
+//                break;
+//        }
         return true;
     }
 

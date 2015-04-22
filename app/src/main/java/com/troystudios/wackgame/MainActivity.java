@@ -14,10 +14,13 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import area730.com.first.R;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends MusicActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +62,9 @@ public class MainActivity extends Activity {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        //mAdView.loadAd(adRequest);
     }
 
 

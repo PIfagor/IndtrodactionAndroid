@@ -27,7 +27,7 @@ import com.google.android.gms.plus.model.people.Person;
 /**
  * A base class to wrap communication with the Google Play Services PlusClient.
  */
-public abstract class PlusBaseActivity extends Activity
+public abstract class PlusBaseActivity extends MusicActivity
         implements GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener,GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 

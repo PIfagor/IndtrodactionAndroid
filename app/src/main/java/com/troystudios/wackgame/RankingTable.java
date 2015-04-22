@@ -16,7 +16,7 @@ import java.util.HashMap;
 import area730.com.first.R;
 
 
-public class RankingTable extends Activity {
+public class RankingTable extends MusicActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
